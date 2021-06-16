@@ -21,3 +21,12 @@ Repositório para os meus estudos com Cypress
     - **integration**: os arquivos de testes
     - **plugins**: instalação e config de plugins
     - **support**: arquivos de suporte aos testes. ex.: utilitários, comandos customizados, etc.
+
+## Testes no WebApp Twitter (clone)
+- https://twitter-clone-example.herokuapp.com/    
+
+## Boas práticas para o nome do teste
+Considere:
+1. O que está sendo testado?
+2. Sob que circunstâncias e condições?
+3. Qual o resultado esperado?

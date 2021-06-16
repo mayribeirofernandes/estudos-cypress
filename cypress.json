@@ -1,1 +1,5 @@
-{}
+{
+    "$schema": "http://on.cypress.io/cypress.schema.json",
+    "viewportWidth": 1200,
+    "viewportHeight": 860
+}
