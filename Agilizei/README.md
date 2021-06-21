@@ -2,7 +2,7 @@
 Repositório para os meus estudos com Cypress
 
 ## Inicialização
-- Criar um projeto node:
+- Criar o projeto node:
 
     `npm init --yes`
 
@@ -10,7 +10,7 @@ Repositório para os meus estudos com Cypress
 
     `npm install -D cypress`
 
-- Abrir o Cypres
+- Abrir o Cypress:
 
     `npx cypress open`
 
