@@ -20,9 +20,13 @@ it('Should be able to mark a ToDo item as completed', () => {
     cy.get('.toggle').click()
 });
 
-it('Should be able to clear items completed', () => {
+it.only('Should be able to clear items completed', () => {
     cy.visit('http://todomvc-app-for-testing.surge.sh')
     cy.get('.new-todo').type("Estudar Cypress{enter}")
+    cy.get('label').should('have.text', 'Estudar Cypress')
+    cy.get('.toggle').should('not.be.checked')
     cy.get('.toggle').click()
+    cy.get('label').should('have.css', 'text-decoration-line', 'line-through')
     cy.contains('Clear completed').click()
+    cy.get('.todo-list').should('not.have.descendants', 'li')
 });
