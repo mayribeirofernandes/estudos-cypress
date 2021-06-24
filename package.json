@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mayribeirofernandes/estudos-cypress#readme",
   "dependencies": {
+    "@applitools/eyes-cypress": "^3.22.0",
     "cypress": "^7.6.0"
   }
 }

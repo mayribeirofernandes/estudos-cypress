@@ -42,7 +42,7 @@ describe('ToDo Filtering', () => {
             todoPage.addTodo('Estudar Cypress')
             todoPage.addTodo('Estudar Python')
             todoPage.addTodo('Estudar TDD')
-            todoPage.markToDoItemasCompleted(2)
+            todoPage.markToDoItemAsCompleted(2)
         });
         it('Should filter "All" ToDo items', () => {
             todoPage.clickFilter('All')

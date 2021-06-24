@@ -51,12 +51,12 @@ describe('ToDo Actions', () => {
         });
          
         it('Should be able to mark a ToDo item as completed', () => {
-            todoPage.markToDoItemasCompleted(1)
+            todoPage.markToDoItemAsCompleted(1)
             todoPage.validateToDoCompleted(1)
         });
         
         it('Should be able to clear items completed', () => {
-            todoPage.markToDoItemasCompleted(1)
+            todoPage.markToDoItemAsCompleted(1)
             todoPage.validateToDoCompleted(1)
             todoPage.clickToClearCompletedItems()
             todoPage.validateNoExistsItemsListed()

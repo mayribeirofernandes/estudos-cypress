@@ -1,3 +1,11 @@
+/*
+Importar a classe lá nas specs:
+    import { TodoPage } from "./page-objects/todo-page";
+
+Instanciar o objeto:
+    const todoPage = new TodoPage()
+*/
+
 export class TodoPage{
     //actions
     navigate(){
@@ -8,7 +16,7 @@ export class TodoPage{
         cy.get('.new-todo').type(todoText + '{enter}')
     }
 
-    markToDoItemasCompleted(todoIndex){
+    markToDoItemAsCompleted(todoIndex){
         cy.get('.todo-list li:nth-child('+ todoIndex +') .toggle').click()
     }
 
