@@ -1,0 +1,23 @@
+{
+  "name": "estudos-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayribeirofernandes/estudos-cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayribeirofernandes/estudos-cypress/issues"
+  },
+  "homepage": "https://github.com/mayribeirofernandes/estudos-cypress#readme",
+  "dependencies": {
+    "cypress": "^7.6.0"
+  }
+}
