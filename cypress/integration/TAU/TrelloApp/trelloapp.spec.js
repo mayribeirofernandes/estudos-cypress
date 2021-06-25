@@ -1,39 +1,59 @@
 /// <reference types="cypress" />
 
+import * as trelloPage from "./trello-functions";
+
 context('advanced cypress lessons', () => {
+
     beforeEach(() => {
-        cy
-         .visit('http://localhost:3000/')
-         .get('[data-cy=create-board]')
-         .click()
-         .get('[data-cy=new-board-input]')
-         .type('Teste Board')
-         .get('[data-cy=new-board-create]')
-         .click()
-         .get('[data-cy=add-list]')
-         .click()
-         .get('[data-cy=add-list-input]')
-         .type('Teste List')
-         .get('[data-cy=save]')
-         .click()
-         .get('[data-cy=new-task]')
-         .click()
-         .get('[data-cy=task-input]')
-         .type('Test Task')
-         .get('[data-cy=add-task]')
-         .click()
+        trelloPage.navigate()
+        trelloPage.createBoard('Test Board')
+        trelloPage.createList('Test List')
+        trelloPage.addTask('Item 01')
+        trelloPage.addTask('Item 02')
     });
+
     after(() => {
-        cy
-         .get('body')
-         .trigger('keydown', { key: "F2", code: "F2", which: 113 })
-         .get('#tools > :nth-child(1)')
-         .click()
+        trelloPage.clearAll()
     });
+
     it('chaining commands', () => {
+        cy
+         .get('[data-cy=task]')
+         .eq(0)
+         .should('contain.text', 'Item 01')
+
         cy
          .get('[data-cy=list]')
          .eq(0)
-         .contains('Test Task')
+         .contains('Item 01')
+    });
+
+    it.only('multiple assertions', () => {
+        cy
+         .get('[data-cy=task]')
+
+         //Sem retry
+         .then( item =>{
+             console.log(item)
+             expect(item[0]).to.contain.text('Item 01')
+             expect(item[1]).to.contain.text('Item 02')
+         })
+
+         //Com retry
+         .should( item =>{
+            console.log(item)
+            expect(item[0]).to.contain.text('Item 01')
+            expect(item[1]).to.contain.text('Item 02')
+        })
+
+         //Com condição lógica
+         .should( item =>{
+            console.log(item)
+            if (item.length !== 3){
+                throw new Error('Não há elementos suficientes!')
+            }
+            expect(item[0]).to.contain.text('Item 01')
+            expect(item[1]).to.contain.text('Item 02')
+        })        
     });
 });
