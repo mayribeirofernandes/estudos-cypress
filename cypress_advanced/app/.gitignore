@@ -7,3 +7,4 @@ cypress/screenshots
 /public/uploaded/*.jpg
 public/css
 public/js
+data/data.json
